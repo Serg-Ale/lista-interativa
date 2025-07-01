@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Metadados básicos para configuração da página -->
+    <meta charset="UTF-8" />
+    <!-- Define o conjunto de caracteres (suporta acentos) -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <!-- Configuração para responsividade -->
+    <title>Lista de Tarefas</title>
+    <!-- Título que aparece na aba do navegador -->
+
+    <!-- Vinculação do arquivo CSS externo -->
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+
+    <!-- Fontes do Google para melhorar a aparência -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Ícones do Font Awesome para os botões -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Container principal que centraliza todo o conteúdo -->
+    <div class="container">
+      <!-- Cabeçalho da aplicação -->
+      <header>
+        <h1>Minha Lista de Tarefas</h1>
+        <p>Organize seu dia de forma simples e eficiente</p>
+      </header>
+
+      <!-- Formulário para adicionar novas tarefas -->
+      <div class="task-form">
+        <!-- Campo de entrada para o texto da tarefa -->
+        <input
+          type="text"
+          id="task-input"
+          placeholder="Digite uma nova tarefa..."
+          autocomplete="off"
+        />
+        <!-- Botão para adicionar a tarefa -->
+        <button id="add-task-btn"><i class="fas fa-plus"></i> Adicionar</button>
+      </div>
+
+      <!-- Filtros para as tarefas -->
+      <div class="task-filters">
+        <button
+          class="filter-btn active"
+          data-filter="all"
+        >
+          Todas
+        </button>
+        <button
+          class="filter-btn"
+          data-filter="active"
+        >
+          Pendentes
+        </button>
+        <button
+          class="filter-btn"
+          data-filter="completed"
+        >
+          Concluídas
+        </button>
+      </div>
+
+      <!-- Lista onde as tarefas serão exibidas -->
+      <ul id="task-list">
+        <!-- As tarefas serão adicionadas aqui dinamicamente via JavaScript -->
+        <!-- Exemplo de como uma tarefa vai aparecer: -->
+        <!--
+            <li class="task-item">
+                <input type="checkbox" class="task-check">
+                <span class="task-text">Exemplo de tarefa</span>
+                <button class="delete-btn"><i class="fas fa-trash"></i></button>
+            </li>
+            -->
+      </ul>
+
+      <!-- Informações sobre as tarefas -->
+      <div class="task-stats">
+        <span id="tasks-counter">0 tarefas restantes</span>
+        <button id="clear-completed">Limpar concluídas</button>
+      </div>
+
+      <!-- Rodapé com informações -->
+      <footer>
+        <p>Desenvolvido por LXNDR &copy; -  sergioalexandre0716@gmail.com</p>
+        <p><small>Clique duas vezes em uma tarefa para editá-la</small></p>
+      </footer>
+    </div>
+
+    <!-- Vinculação do arquivo JavaScript (no final do body) -->
+    <script src="script.js"></script>
+  </body>
+</html>

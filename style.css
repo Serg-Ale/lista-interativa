@@ -1,0 +1,225 @@
+/* Reset básico para remover margens e paddings padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Inclui padding e border no cálculo de width/height */
+}
+
+/* Estilização do corpo da página */
+body {
+    font-family: 'Roboto', sans-serif; /* Usa a fonte importada do Google */
+    background-color: #f5f8fa; /* Fundo cinza claro */
+    color: #333; /* Cor do texto principal */
+    line-height: 1.6; /* Espaçamento entre linhas */
+}
+
+/* Container principal que centraliza o conteúdo */
+.container {
+    max-width: 600px; /* Largura máxima */
+    margin: 40px auto; /* Centraliza horizontalmente com espaço acima/abaixo */
+    background-color: white; /* Fundo branco */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 25px; /* Espaçamento interno */
+}
+
+/* Estilização do cabeçalho */
+header {
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 25px; /* Espaço abaixo */
+    padding-bottom: 15px; /* Espaço interno inferior */
+    border-bottom: 1px solid #eee; /* Linha separadora */
+}
+
+header h1 {
+    color: #3498db; /* Azul para o título */
+    margin-bottom: 8px; /* Espaço abaixo do título */
+}
+
+header p {
+    color: #777; /* Cinza para a descrição */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+/* Estilização do formulário de adição de tarefas */
+.task-form {
+    display: flex; /* Layout flexbox */
+    margin-bottom: 20px; /* Espaço abaixo */
+    gap: 10px; /* Espaço entre os elementos */
+}
+
+#task-input {
+    flex: 1; /* Ocupa todo espaço disponível */
+    padding: 12px 15px; /* Espaçamento interno */
+    border: 1px solid #ddd; /* Borda cinza claro */
+    border-radius: 4px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: border-color 0.3s; /* Animação suave para a borda */
+}
+
+#task-input:focus {
+    border-color: #3498db; /* Borda azul quando em foco */
+    outline: none; /* Remove contorno padrão */
+}
+
+#add-task-btn {
+    background-color: #3498db; /* Fundo azul */
+    color: white; /* Texto branco */
+    border: none; /* Sem borda */
+    border-radius: 4px; /* Bordas arredondadas */
+    padding: 12px 20px; /* Espaçamento interno */
+    cursor: pointer; /* Cursor de mão */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: background-color 0.3s; /* Animação suave */
+}
+
+#add-task-btn:hover {
+    background-color: #2980b9; /* Azul mais escuro ao passar o mouse */
+}
+
+/* Estilização dos filtros */
+.task-filters {
+    display: flex; /* Layout flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    margin-bottom: 20px; /* Espaço abaixo */
+    gap: 10px; /* Espaço entre os botões */
+}
+
+.filter-btn {
+    background-color: transparent; /* Fundo transparente */
+    border: 1px solid #ddd; /* Borda cinza claro */
+    border-radius: 20px; /* Bordas bem arredondadas */
+    padding: 8px 15px; /* Espaçamento interno */
+    cursor: pointer; /* Cursor de mão */
+    font-size: 14px; /* Tamanho da fonte */
+    transition: all 0.3s; /* Animação suave */
+}
+
+.filter-btn:hover {
+    background-color: #f5f5f5; /* Cinza bem claro ao passar o mouse */
+}
+
+.filter-btn.active {
+    background-color: #3498db; /* Fundo azul para filtro ativo */
+    color: white; /* Texto branco */
+    border-color: #3498db; /* Borda azul */
+}
+
+/* Estilização da lista de tarefas */
+#task-list {
+    list-style-type: none; /* Remove marcadores de lista */
+    margin-bottom: 20px; /* Espaço abaixo */
+}
+
+.task-item {
+    display: flex; /* Layout flexbox */
+    align-items: center; /* Alinha itens verticalmente */
+    padding: 12px 15px; /* Espaçamento interno */
+    border-bottom: 1px solid #eee; /* Linha separadora */
+    transition: background-color 0.3s; /* Animação suave */
+}
+
+.task-item:hover {
+    background-color: #f9f9f9; /* Cinza bem claro ao passar o mouse */
+}
+
+.task-check {
+    margin-right: 15px; /* Espaço à direita */
+    width: 18px; /* Largura */
+    height: 18px; /* Altura */
+    cursor: pointer; /* Cursor de mão */
+}
+
+.task-text {
+    flex: 1; /* Ocupa todo espaço disponível */
+    font-size: 16px; /* Tamanho da fonte */
+    transition: color 0.3s; /* Animação suave */
+}
+
+/* Estilo para tarefas concluídas */
+.completed .task-text {
+    color: #999; /* Cinza para texto */
+    text-decoration: line-through; /* Linha através do texto */
+}
+
+.delete-btn {
+    background-color: transparent; /* Fundo transparente */
+    border: none; /* Sem borda */
+    color: #e74c3c; /* Vermelho para o ícone */
+    cursor: pointer; /* Cursor de mão */
+    font-size: 16px; /* Tamanho da fonte */
+    opacity: 0.5; /* Parcialmente transparente */
+    transition: opacity 0.3s; /* Animação suave */
+}
+
+.delete-btn:hover {
+    opacity: 1; /* Totalmente opaco ao passar o mouse */
+}
+
+/* Estilização para tarefa em modo de edição */
+.editing .task-text {
+    display: none; /* Esconde o texto */
+}
+
+.edit-input {
+    flex: 1; /* Ocupa todo espaço disponível */
+    padding: 8px; /* Espaçamento interno */
+    border: 1px solid #3498db; /* Borda azul */
+    border-radius: 4px; /* Bordas arredondadas */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+/* Estilização das estatísticas de tarefas */
+.task-stats {
+    display: flex; /* Layout flexbox */
+    justify-content: space-between; /* Espaço entre os elementos */
+    align-items: center; /* Alinha itens verticalmente */
+    color: #777; /* Texto cinza */
+    font-size: 14px; /* Tamanho da fonte */
+    padding-top: 15px; /* Espaço acima */
+    border-top: 1px solid #eee; /* Linha separadora */
+}
+
+#clear-completed {
+    background-color: transparent; /* Fundo transparente */
+    border: none; /* Sem borda */
+    color: #3498db; /* Texto azul */
+    cursor: pointer; /* Cursor de mão */
+    font-size: 14px; /* Tamanho da fonte */
+    transition: color 0.3s; /* Animação suave */
+}
+
+#clear-completed:hover {
+    color: #2980b9; /* Azul mais escuro ao passar o mouse */
+    text-decoration: underline; /* Sublinhado */
+}
+
+/* Estilização do rodapé */
+footer {
+    text-align: center; /* Centraliza o texto */
+    margin-top: 25px; /* Espaço acima */
+    color: #999; /* Texto cinza claro */
+    font-size: 14px; /* Tamanho da fonte */
+}
+
+footer small {
+    font-size: 12px; /* Tamanho da fonte menor */
+    color: #aaa; /* Texto cinza mais claro */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 650px) {
+    .container {
+        margin: 20px 15px; /* Reduz margens */
+        padding: 20px; /* Reduz padding */
+    }
+    
+    .task-form {
+        flex-direction: column; /* Empilha os elementos */
+    }
+    
+    #add-task-btn {
+        margin-top: 10px; /* Espaço acima */
+        width: 100%; /* Ocupa toda a largura */
+    }
+}
